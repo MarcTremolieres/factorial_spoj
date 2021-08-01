@@ -1,6 +1,8 @@
 import sys
 
-lignes = sys.stdin.readlines()
+f = open("entree.txt", "r")
+lignes = f.readlines()
+#lignes = sys.stdin.readlines()
 
 for index in range(1, int(lignes[0]) + 1):
     nombre = int(lignes[index])
