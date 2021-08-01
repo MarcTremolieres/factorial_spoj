@@ -5,26 +5,24 @@
 using namespace std;
 
 int main(){
-    fstream fichier;
-    fichier.open("entree.txt", ios::in);
     vector<int> nombres;
-    if (fichier.is_open()) {
-      string ligne;
-      while( getline(fichier, ligne)) {
+    string ligne;
+    while( getline(cin, ligne)) {
+        if (ligne == "") {
+            break;
+        }
         nombres.push_back(stoi(ligne));
       }
-      fichier.close();
-      int nombre, z, diviseur;
-      for (int index = 1; index < nombres[0] + 1; index++) {
-        nombre = nombres[index];
-        z = 0;
-        diviseur = 5;
-        while ( diviseur <= nombre) {
-          z += nombre / diviseur;
-          diviseur *= 5;
-        }
-      cout << z << "\n";
-      }
+    int nombre, z, diviseur;
+    for (int index = 1; index < nombres[0] + 1; index++) {
+    nombre = nombres[index];
+    int z = 0;
+    int diviseur = 5;
+    while ( diviseur <= nombre) {
+        z += nombre / diviseur;
+        diviseur *= 5;
     }
+    cout << z << "\n";
 
+    }
 }
